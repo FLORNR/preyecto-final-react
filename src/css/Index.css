@@ -1,0 +1,13 @@
+
+.general {
+    background-color: rgb(241, 173, 173);
+}
+
+main {
+    padding: 20px;
+   border-bottom: 2px solid black;
+}
+
+header {
+    background-color: black;
+}

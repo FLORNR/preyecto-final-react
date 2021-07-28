@@ -1,0 +1,26 @@
+
+.ordenarTitulo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    line-height: 0.7rem;
+}
+
+.titulo {
+    font-family: 'Kaushan Script', cursive;
+    font-size: 40px;
+    color: rgb(241, 173, 173);
+    padding-top: 10px;
+}
+
+.titulo2 {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: white;
+}
+
+p {
+    margin: 15px;
+}
