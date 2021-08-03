@@ -1,4 +1,5 @@
 import Logo from "./logo.js";
+import Icono from "./CartWidget"
 import cssNavbar from "../css/navbar.css"
 
 function NavBar () {
@@ -11,6 +12,7 @@ function NavBar () {
                <li><a href="#">HOMBRE</a></li>
                <li><a href="#">NIÑOS</a></li>
                <li><a href="#">SUBLIMAR</a></li>
+               <li><Icono/></li>
             </ul>
        </nav>
     )

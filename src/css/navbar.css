@@ -1,7 +1,7 @@
 .estiloMenu li a{
     text-decoration: none;
     font-size:25px;
-    color: rgb(241, 173, 173);
+    color: black;
     font-family: 'Quicksand', sans-serif;
     font-weight: 700;
 }
@@ -24,4 +24,9 @@ nav {
     flex-direction: row;
     justify-content: space-around;
     border-bottom: 2px solid black;
+}
+
+.cartIco {
+    width: 30px;
+
 }
