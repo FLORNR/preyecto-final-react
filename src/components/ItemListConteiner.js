@@ -1,10 +1,12 @@
-function ItemList (props) {
+import ItemList from "./ItemList"
+
+function ItemListConteiner () {
     
     return (
     <div>
-        <p>{props.greeting}</p>
+        <ItemList/>
     </div>
     )
 };
 
-export default ItemList
+export default ItemListConteiner;

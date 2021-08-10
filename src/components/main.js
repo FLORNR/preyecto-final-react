@@ -1,12 +1,12 @@
 import cssMain from "../css/main.css"
-import ItemList from "./ItemListConteiner"
+import ItemListContainer from "./ItemListConteiner"
 import ItemCountHooks from "./ItemCount"
 
 function main() {
     return (
         <main>
         <div className="texto">
-           <ItemList greeting= "Este será mi carrito de compras"/>
+           <ItemListContainer />
            <ItemCountHooks valorInicial = "1" stock ="10"/>
         </div>
         <div className="texto">
