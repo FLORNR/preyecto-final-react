@@ -17,7 +17,7 @@ function restarProductos () {
 }
    return (
     <>
-    <h1>CANTIDAD DEL PRODUCTO: {count}</h1>
+    <h5>CANTIDAD: {count}</h5>
     <button onClick = {()=> restarProductos()}> - </button>
     <button onClick = {()=>sumarProductos()}> + </button>
     
