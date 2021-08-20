@@ -8,10 +8,9 @@ function NavBar () {
            <Logo/>
            <ul className="estiloMenu">
                <li><a href="#">HOME</a></li>
-               <li><a href="#">MUJER</a></li>
-               <li><a href="#">HOMBRE</a></li>
-               <li><a href="#">NIÑOS</a></li>
                <li><a href="#">SUBLIMAR</a></li>
+               <li><a href="#">DISEÑO</a></li>
+               <li><a href="#">EMPRESA</a></li>
                <li><Icono/></li>
             </ul>
        </nav>
