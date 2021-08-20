@@ -1,19 +1,23 @@
 import { useState, useEffect } from "react";
-import ArrayProductos from "../arrayProductos.js";
+import {productos} from "../productos";
 import ItemDetail from "./ItemDetail"  
-import { Link } from "react-router-dom";
+import {useParams} from "react-router-dom";
+import {Link} from "react-router-dom"
+import itemCSS from "../css/item.css"
 
 function ItemDetailConteiner() {
-  const [productos, setProductos ] = useState([]);
+  const [producto, setProducto ] = useState([]);
+
+    const {id} = useParams();
    
     useEffect(() => {
       new Promise((resolve, reject) => {
 
-        setTimeout(() => resolve(ArrayProductos), 1000);
+        setTimeout(() => resolve(productos.filter((item)=>item.id === id)), 1000);
     })
-      .then((datosResolve) => {
-        console.log("datos Resolve", datosResolve);
-        setProductos(datosResolve);
+      .then((datosProducto) => {
+        console.log("datos producto", datosProducto);
+        setProducto(datosProducto[0]);
       })
       .catch((error) => {
         console.log("err", error);
@@ -21,16 +25,11 @@ function ItemDetailConteiner() {
   }, []);
 
   return (
-        <div className="flex">
-            {ArrayProductos.map((cadaProducto)=>(
-            <div className="card"style={{width: "18rem"}}>
-            <img src={cadaProducto.pictureUrl} className="card-img-top" alt=""/>
-            <h4 className="card-title">{cadaProducto.title}</h4>
-            <Link to= {`/ItemDetail`}>Ver Más</Link>
-    </div> 
-        ))}
-  </div>
-  );
+    <>
+        <ItemDetail {...producto}/>  
+        <Link className="botonVolver" to= "/ItemListContainer"> VOLVER A PRODUCTOS </Link>
+     </>
+  )
 }
 
 

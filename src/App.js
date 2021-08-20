@@ -2,21 +2,27 @@
 import NavBar from "./components/navbar.js"
 import Main from "./components/main.js"
 import Footer from "./components/footer.js"
-import cssIndex from "./css/Index.css"
+import ccsIndex from "./css/Index.css"
+import { BrowserRouter, Switch, Route} from "react-router-dom";                                                                                  
+import ItemListConteiner from "./components/ItemListConteiner.js";
+import ItemDetailConteiner from "./components/ItemDetailConteiner.js";
 
 function App() {
   return (
-    <div className="App general">
-      <header className="App-header">
+    <div className="general">
+    <BrowserRouter>
         <NavBar/>
-      </header>
-     
-        <Main/>
-     
-      <footer>
-      <Footer/> 
-      </footer>
-    </div>
+        <Switch>
+            <Route exact path="/">
+                <ItemListConteiner/>
+            </Route>
+            <Route exact path ="/item/:id">
+                <ItemDetailConteiner/>
+            </Route>
+        </Switch>
+        <Footer/> 
+    </BrowserRouter>
+  </div>
   );
 }
 
