@@ -25,10 +25,11 @@ function ItemDetailConteiner() {
   }, []);
 
   return (
-    <>
-        <ItemDetail {...producto}/>  
+    <div className="gral">
+        <ItemDetail {...producto}/> 
+    
         <Link className="botonVolver" to= "/ItemListContainer"> VOLVER A PRODUCTOS </Link>
-     </>
+    </div>  
   )
 }
 
