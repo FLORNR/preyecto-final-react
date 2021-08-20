@@ -1,6 +1,6 @@
 
 import cssLogo from "../css/logo.css"
-import logo from "../img/radicci.png"
+
 
 function Logo (){
     return (
