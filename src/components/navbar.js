@@ -1,6 +1,6 @@
 import Logo from "./logo.js";
 import Icono from "./CartWidget"
-import cssNavbar from "../css/navbar.css"
+import "../css/navbar.css"
 
 function NavBar () {
     return(

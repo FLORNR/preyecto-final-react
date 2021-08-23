@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import {productos} from "../productos";
-import ItemDetail from "./ItemDetail"  
+import ItemDetail from "./ItemDetail"
 import {useParams} from "react-router-dom";
 import {Link} from "react-router-dom"
-import itemCSS from "../css/item.css"
+import "../css/item.css"
 
 function ItemDetailConteiner() {
   const [producto, setProducto ] = useState([]);
@@ -28,7 +28,7 @@ function ItemDetailConteiner() {
     <div className="gral">
         <ItemDetail {...producto}/> 
     
-        <Link className="botonVolver" to= "/ItemListContainer"> VOLVER A PRODUCTOS </Link>
+        <Link className="botonVolver" to= "/"> VOLVER A PRODUCTOS </Link>
     </div>  
   )
 }

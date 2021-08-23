@@ -1,5 +1,5 @@
 import ItemCountHooks from "./ItemCount"
-import itemCSS from "../css/item.css"
+import "../css/item.css"
 
 
 

@@ -1,6 +1,6 @@
 
 import {Link} from 'react-router-dom';
-import ccsItem from "../css/item.css"
+import "../css/item.css"
 
 
 function Item(props) {

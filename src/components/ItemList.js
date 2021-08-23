@@ -1,5 +1,5 @@
 
-import itemCSS from "../css/item.css"
+import "../css/item.css"
 import Item from "./Item"
 
 

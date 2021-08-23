@@ -1,8 +1,7 @@
 
 import NavBar from "./components/navbar.js"
-import Main from "./components/main.js"
 import Footer from "./components/footer.js"
-import ccsIndex from "./css/Index.css"
+import "./css/Index.css"
 import { BrowserRouter, Switch, Route} from "react-router-dom";                                                                                  
 import ItemListConteiner from "./components/ItemListConteiner.js";
 import ItemDetailConteiner from "./components/ItemDetailConteiner.js";

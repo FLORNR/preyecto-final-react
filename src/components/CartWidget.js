@@ -1,9 +1,9 @@
-import cssNavBar from "../css/navbar.css"
+import"../css/navbar.css"
 
 function cartIco () {
     return (
     <div className="cartIco">
-        <i class="fas fa-shopping-cart"></i>
+        <i className="fas fa-shopping-cart"></i>
     </div>
     )
 };

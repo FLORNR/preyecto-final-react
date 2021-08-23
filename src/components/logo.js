@@ -1,5 +1,5 @@
 
-import cssLogo from "../css/logo.css"
+import "../css/logo.css"
 
 
 function Logo (){

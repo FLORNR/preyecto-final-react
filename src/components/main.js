@@ -1,6 +1,6 @@
-import cssMain from "../css/main.css"
+import "../css/main.css"
 import ItemListContainer from "./ItemListConteiner"
-import ItemCountHooks from "./ItemCount"
+import "./ItemCount"
 
 function main() {
     return (
