@@ -1,13 +1,14 @@
 
-import "../css/logo.css"
+import "../css/logo.css";
+import {Link} from "react-router-dom";
 
 
 function Logo (){
     return (
-        <div className="ordenarTitulo">
+        <Link className="ordenarTitulo" to ="/">
             <p className="titulo">RADICCI</p>
             <p className="titulo2">MODA</p>
-        </div>
+        </Link>
      )
 };
 

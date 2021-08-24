@@ -18,6 +18,9 @@ function App() {
             <Route exact path ="/item/:id">
                 <ItemDetailConteiner/>
             </Route>
+            <Route exact path = "/category/:category">
+                <ItemListConteiner/>
+            </Route>
         </Switch>
         <Footer/> 
     </BrowserRouter>
