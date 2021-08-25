@@ -1,8 +1,9 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 
 function ItemCountHooks (props) {
    const [count, setCount] = useState(parseInt(props.valorInicial))
    const [stockProd, setStockProd] = useState(parseInt(props.stock)) 
+   const onAdd = () =>{}
 
    function sumarProductos () {
     if (count < stockProd) {
@@ -15,6 +16,11 @@ function restarProductos () {
         setCount(count -1)
     }
 }
+
+useEffect(()=>{
+    onAdd(count);
+}, [count]);
+
    return (
     <>
     <h5>CANTIDAD: {count}</h5>
