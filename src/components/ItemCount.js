@@ -17,16 +17,12 @@ function restarProductos () {
     }
 }
 
-useEffect(()=>{
-    onAdd(count);
-}, [count]);
-
    return (
     <>
     <h5>CANTIDAD: {count}</h5>
     <button onClick = {()=> restarProductos()}> - </button>
     <button onClick = {()=>sumarProductos()}> + </button>
-    
+    <button className="boton" onClick={()=>props.onClick(count)} >AGREGAR</button>
     </>
     )
 };

@@ -6,7 +6,14 @@ import { Link } from "react-router-dom"
 
 
  function ItemDetail(props){
-    const [ count, setCount ] = useState(0)
+    const [ cantidadCompra, setCantidadCompra ] = useState();
+    const [ terminarCompra, setTerminarCompra] = useState(false);
+
+    const onAdd = (cantProducto) => {
+        setCantidadCompra(cantProducto)
+        setTerminarCompra(!terminarCompra)
+    }
+
     return(
         <div>
             <div className="card cardRender"style={{width: "18rem"}}>
@@ -14,12 +21,14 @@ import { Link } from "react-router-dom"
             <h2 className="card-title">{props.title}</h2>
             <p className="card-title">{props.description}</p>
             <h4 className="card-title">{props.price}</h4>
-            <ItemCountHooks valorInicial= "1" stock="10" onAdd={setCount}/>
-            <button className="boton">AGREGAR</button>
-            {count > 0 && <Link className="boton" to="/cart">FINALIZAR COMPRA</Link>}
-            </div>      
+            {terminarCompra ? (
+                <Link to = "/cart" className="boton">FINALIZAR COMPRA</Link>
+                ) : (
+                <ItemCountHooks valorInicial= "1" stock= "10" onClick={(cantidad)=>onAdd(cantidad)}/>
+            )}
+            </div>
         </div> 
-    )};                     
+        )};                     
 
 
 
