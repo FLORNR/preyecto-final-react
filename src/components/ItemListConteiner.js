@@ -7,12 +7,15 @@ import { useParams } from "react-router-dom";
 
  function ItemListConteiner() {
   const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(false);
   
   const { category }  = useParams()
 
   useEffect(() => {
     new Promise((resolve, reject) => {
     
+        setLoading(true); 
+
     if (category !== undefined){
         setTimeout(() => resolve(productos.filter((item)=>item.category === category)), 2000);
     }else{
@@ -22,13 +25,21 @@ import { useParams } from "react-router-dom";
       .then((datosProductos) => {
         console.log("datos productos", products)
         setProducts(datosProductos);
+        setLoading(false);
       })
       .catch((error) => {
         console.log("err", error);
       });
   }, [category]);
 
-  return (
+  return loading ? (
+
+    <div className="loadingio-spinner-bean-eater-jn47c5ktji loading">
+        <div className="ldio-o84b2rt9xe">
+            <div><div></div><div></div><div></div></div><div><div></div><div></div><div></div></div>
+        </div></div>
+
+) : (
         <div className="contenedor">
             <ItemList products={products}/>
         </div>

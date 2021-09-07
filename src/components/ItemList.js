@@ -6,7 +6,7 @@ import Item from "./Item"
  function ItemList({products}) {
      return (
      <div className= "flex">
-         {products.map ((item) => (<Item {...item}/>
+         {products.map ((item) => (<Item {...item} key={item.id}/>
          ))}
      </div>
  )};

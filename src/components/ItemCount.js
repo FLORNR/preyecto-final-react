@@ -1,18 +1,18 @@
-import React, {useEffect, useState} from "react";
+import React, { useState } from "react";
 
 function ItemCountHooks (props) {
-   const [count, setCount] = useState(parseInt(props.valorInicial))
-   const [stockProd, setStockProd] = useState(parseInt(props.stock)) 
-   const onAdd = () =>{}
+   const [count, setCount] = useState(parseInt(props.initial))
+   const [stock, setStock] = useState(parseInt(props.stock));
+    
 
    function sumarProductos () {
-    if (count < stockProd) {
+    if (count < stock) {
         setCount(count +1)
     }
 }                  
 
 function restarProductos () {
-    if (count > 1) {
+    if (count > 0) {
         setCount(count -1)
     }
 }

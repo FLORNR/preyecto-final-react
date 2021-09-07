@@ -5,12 +5,16 @@ import "./css/Index.css"
 import { BrowserRouter, Switch, Route} from "react-router-dom";                                                                                  
 import ItemListConteiner from "./components/ItemListConteiner.js";
 import ItemDetailConteiner from "./components/ItemDetailConteiner.js";
-import { cartContext} from "./context/cartContext"
+import { CartProvider} from "./context/cartContext";
+import  Cart from "./components/Cart";
+
 
 function App() {
+
+
   return (
     <div className="general">
-     <cartContext.Provider value={[]}>
+     <CartProvider>
         <BrowserRouter>
             <NavBar/>
             <Switch>
@@ -23,10 +27,15 @@ function App() {
                 <Route exact path = "/category/:category">
                     <ItemListConteiner/>
                 </Route>
+                <Route exact path="/cart">
+                    <section>
+                        <Cart />
+                    </section>
+                </Route>
             </Switch>
             <Footer/> 
         </BrowserRouter>
-    </cartContext.Provider>   
+    </CartProvider>   
   </div>
   );
 }
