@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 
 function ItemCountHooks (props) {
-   const [count, setCount] = useState(parseInt(props.initial))
+    console.log("props", props)
+   const [count, setCount] = useState(parseInt(props.valorInicial))
    const [stock, setStock] = useState(parseInt(props.stock));
     
 
@@ -16,7 +17,7 @@ function restarProductos () {
         setCount(count -1)
     }
 }
-
+console.log("count", count)
    return (
     <>
     <h5>CANTIDAD: {count}</h5>

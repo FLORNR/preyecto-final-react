@@ -10,7 +10,7 @@ function Item(props) {
         <div className="card card2"style={{width: "15rem"}}>
             <img src={props.pictureUrl} className="card-img-top" alt=""/>
             <h4 className="card-title">{props.title}</h4>
-            <Link className="boton" to= {`./item/${props.id}`}>VER MÁS</Link>
+            <Link className="boton" to= {`/item/${props.id}`}>VER MÁS</Link>
         </div>                                                                                                                    
 );
 }

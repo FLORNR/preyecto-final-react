@@ -12,6 +12,7 @@ import { CartContext } from "../context/cartContext"
 
     const [ cart, setCart ] = useContext(CartContext);
 
+    console.log("cart", cart)
     const onAdd = (cantProducto) => {
         setCantidadCompra(cantProducto)
         setTerminarCompra(!terminarCompra)
