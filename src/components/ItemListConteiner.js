@@ -34,11 +34,7 @@ import { useParams } from "react-router-dom";
 
   return loading ? (
 
-    <div className="loadingio-spinner-bean-eater-jn47c5ktji loading">
-        <div className="ldio-o84b2rt9xe">
-            <div><div></div><div></div><div></div></div><div><div></div><div></div><div></div></div>
-        </div></div>
-
+    <div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
 ) : (
         <div className="contenedor">
             <ItemList products={products}/>
