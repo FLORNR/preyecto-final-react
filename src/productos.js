@@ -8,7 +8,7 @@ import RemeraML from "./img/mangaLarga.png"
         {
             id: '1',
             category: 'sublimar',
-            title: 'Remera Blanca Para Sublimar MC',
+            title: 'Remera Para Sublimar MC',
             description: 'Remera de Spun, para sublimar. Talles disponibles: S, M, L, XL, XXL. Colores Disponibles: Blanco, Gris Negro.',
             price: 480,
             pictureUrl: RemeraSublimar,
@@ -18,7 +18,7 @@ import RemeraML from "./img/mangaLarga.png"
         {
             id: '2',
             category: 'sublimar',
-            title: 'Remera Blanca Para Sublimar ML',
+            title: 'Remera Para Sublimar ML',
             description: 'Remera de Spun, para sublimar. Talles disponibles: S, M, L, XL, XXL. Colores Disponibles: Blanco, Gris Negro',
             price: 570,
             pictureUrl: RemeraML,
@@ -28,7 +28,7 @@ import RemeraML from "./img/mangaLarga.png"
         {
             id: '3',
             category: 'diseño',
-            title: 'Remera Diseño',
+            title: 'Remera Para Diseñar',
             description: 'Remera de Spun, en distintos talles y colores, diseño sublimado a elección. Talles disponibles: S, M, L, XL, XXL. Colores Disponibles: Blanco, Gris Negro',
             price: 700,
             pictureUrl: RemeraEleccion,
@@ -38,7 +38,7 @@ import RemeraML from "./img/mangaLarga.png"
         {
             id: '4',
             category: 'sublimar',
-            title: 'Musculosa Blanca Para Sublimar',
+            title: 'Musculosa Para Sublimar',
             description: 'Musculosa de Spun, para sublimar. Talles disponibles: S, M, L, XL, XXL. Colores Disponibles: Blanco, Gris Negro',
             price: 450,
             pictureUrl: Musculosa,

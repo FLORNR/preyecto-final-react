@@ -1,15 +1,18 @@
 .estiloMenu li a{
     text-decoration: none;
-    font-size:25px;
+    font-size:20px;
     color: black;
     font-family: 'Quicksand', sans-serif;
     font-weight: 700;
+    
 }
 
 .estiloMenu li {
     list-style: none;
-    padding: 7px 10px;
+    padding: 5px 10px;
     margin: 5px;
+    margin-top: 20px;
+    max-height: 40px;
     background-color: white;
     border-radius: 10px;
     text-align: center;
@@ -30,5 +33,4 @@ nav {
 
 .cartIco {
     width: 30px;
-
 }

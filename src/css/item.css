@@ -26,7 +26,7 @@
 .boton {
     text-decoration: none;
     color: black;
-    background-color: gray;
+    background-color: #60b9bb;
     border-radius: 10px 10px;
     font-size: 1.2rem;
     font-weight: 700;
@@ -34,9 +34,14 @@
     width: 100%;
     text-align: center;
     margin-top: 2rem;
-    padding: 10px;
+    padding: 10px 0px;
+
 }
 
+.card-title {
+    font-size: 22px;
+    font-weight: 600;
+}
 
 .flex a {
     color: black;
@@ -48,8 +53,8 @@
 
 .botonVolver {
     text-decoration: none;
-    color: black;
-    background-color: gray;
+    color: white;
+    background-color: #000000d1;
     border-radius: 10px 10px;
     font-size: 1.5rem;
     font-weight: 700;
@@ -98,4 +103,65 @@
     font-size: 1.4rem;
     font-weight: 600;
     margin-bottom: 1.5rem;
+}
+
+.alLado {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.alLado button {
+    width: 2.5rem;
+    margin: 1rem;
+    border: 0.5px solid black;
+    font-size: 1rem;
+    font-weight: 800;
+    border-radius: 10px;
+}
+
+.formato {
+    display: inline-block;
+    background-color: white;
+    opacity: 0.9;
+    border-radius: 10px;
+    margin-top: 2rem;
+    text-align: center;
+    margin-left: 2rem;
+    padding: 1rem;
+    font-size: 2rem;
+}
+
+.estiloTitulo {
+
+    background-color: #ffffff8f;
+    text-align: center;
+}
+
+.estiloTituloDos {
+
+    background-color: #eed1d1d3;
+    text-align: center;
+}
+
+.estiloItems {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.estiloItemsDos {
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 5px;
+}
+
+.iconos {    
+   border-radius: 5px;
+   background-color: black;
+}
+.acomodarBoton {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 3rem;
 }

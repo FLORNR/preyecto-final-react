@@ -37,7 +37,7 @@ import { CartContext } from "../context/cartContext"
             <p className="card-title">{props.description}</p>
             <h4 className="card-title"> ${props.price}</h4>
             {terminarCompra ? (
-                <Link to = "/cart" className="boton">FINALIZAR COMPRA</Link>
+                <Link to = "/cart" className="boton">IR AL CARRITO</Link>
                 ) : (
                 <ItemCountHooks valorInicial= {props.initial} stock= {props.stock} onClick={(cantidad)=>agregarAlCarrito(cantidad)}/>
             )}

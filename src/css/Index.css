@@ -1,11 +1,14 @@
 
 .general {
-    background-color: rgb(241, 173, 173);
+    background-image: url(../img/fondo.jpg);
+    min-height: auto;
+    
 }
 
 main {
     padding: 20px;
-   border-bottom: 2px solid black;
+    min-height: 650px;
+   max-height: 1000px;
 }
 
 header {

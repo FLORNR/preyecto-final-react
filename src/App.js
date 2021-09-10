@@ -17,6 +17,7 @@ function App() {
      <CartProvider>
         <BrowserRouter>
             <NavBar/>
+            <main>
             <Switch>
                 <Route exact path="/">
                     <ItemListConteiner/>
@@ -33,6 +34,7 @@ function App() {
                     </section>
                 </Route>
             </Switch>
+            </main>
             <Footer/> 
         </BrowserRouter>
     </CartProvider>   

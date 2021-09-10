@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "../css/item.css";
 
 function ItemCountHooks (props) {
     console.log("props", props)
@@ -21,8 +22,10 @@ console.log("count", count)
    return (
     <>
     <h5>CANTIDAD: {count}</h5>
-    <button onClick = {()=> restarProductos()}> - </button>
-    <button onClick = {()=>sumarProductos()}> + </button>
+    <div className="alLado">
+        <button onClick = {()=> restarProductos()}> - </button>
+        <button onClick = {()=>sumarProductos()}> + </button>
+    </div>
     <button className="boton" onClick={()=>props.onClick(count)} >AGREGAR</button>
     </>
     )

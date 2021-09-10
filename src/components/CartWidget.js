@@ -11,8 +11,8 @@ function CartIco () {
     console.log(cartLength)
 
     return (
-    <Link to="/cart" className="cartIco">
-        <i className="fas fa-shopping-cart"></i>
+    <Link to="/cart" className="cartIco" >
+        <i style={{color:"rgb(241, 173, 173)"}} className="fas fa-shopping-cart"></i>
         { {cartLength} === 0 ? (
                 ""
             ) : (

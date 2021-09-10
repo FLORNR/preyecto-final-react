@@ -51,6 +51,7 @@ export const CartProvider = ( {children} ) => {
         const newCart = cart.filter((item) => item.id !== producto);
         setCart(newCart);
         };
+        
     //funcion para vaciar el carrito
     const vaciarCarrito = () => {
             setCart([])
