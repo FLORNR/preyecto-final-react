@@ -32,8 +32,8 @@ import { CartContext } from "../context/cartContext"
     return(
         <div>
             <div className="card cardRender"style={{width: "18rem"}}>
-            <img src={props.pictureUrl} className="card-img-top" alt=""/>
-            <h2 className="card-title">{props.title}</h2>
+            <img src={props.img} className="card-img-top" alt=""/>
+            <h2 className="card-title">{props.name}</h2>
             <p className="card-title">{props.description}</p>
             <h4 className="card-title"> ${props.price}</h4>
             {terminarCompra ? (

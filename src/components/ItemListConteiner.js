@@ -3,6 +3,9 @@ import ItemList from "./ItemList";
 import {productos} from "../productos"
 import {useEffect, useState} from 'react';
 import { useParams } from "react-router-dom";
+import { collection, getDocs, query, where } from 'firebase/firestore';
+import { getData } from '../firebase';
+
 
 
  function ItemListConteiner() {
@@ -12,29 +15,71 @@ import { useParams } from "react-router-dom";
   const { category }  = useParams()
 
   useEffect(() => {
-    new Promise((resolve, reject) => {
-    
-        setLoading(true); 
+    setLoading(true);
 
-    if (category !== undefined){
-        setTimeout(() => resolve(productos.filter((item)=>item.category === category)), 2000);
-    }else{
-      setTimeout(() => resolve(productos), 2000);
-    }
-    })
-      .then((datosProductos) => {
-        console.log("datos productos", products)
-        setProducts(datosProductos);
+    // función que busca todos los productos
+    const getProds = async () => {
+      const prodCollection = collection(getData(), 'productos');
+      const prodSnapshot = await getDocs(prodCollection);
+      const prodList = prodSnapshot.docs.map(doc => ({
+        id: doc.id,
+        ...doc.data()
+      }));
+      setLoading(false);
+      setProducts(prodList);
+    };
+
+    // función que busca productos filtrados
+    const getCategory = async () => {
+      const prodCollection = collection(getData(), 'productos');
+      const categoryQuery = query(prodCollection, where('category', '==', `${category}`));
+      try {
+        const prodSnapshot = await getDocs(categoryQuery);
+        const categoryList = prodSnapshot.docs.map(doc => ({
+          id: doc.id,
+          ...doc.data()
+        }));
         setLoading(false);
-      })
-      .catch((error) => {
-        console.log("err", error);
-      });
+        setProducts(categoryList);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+
+    // elijo qué función utilizar
+    if (category !== undefined){
+      getCategory();
+    } else {
+      getProds();
+    }
+
   }, [category]);
+
+
+//   useEffect(() => {
+//     new Promise((resolve, reject) => {
+    
+//         setLoading(true); 
+
+//     if (category !== undefined){
+//         setTimeout(() => resolve(productos.filter((item)=>item.category === category)), 2000);
+//     }else{
+//       setTimeout(() => resolve(productos), 2000);
+//     }
+//     })
+//       .then((datosProductos) => {
+//         console.log("datos productos", products)
+//         setProducts(datosProductos);
+//         setLoading(false);
+//       })
+//       .catch((error) => {
+//         console.log("err", error);
+//       });
+//   }, [category]);
 
   return loading ? (
 
-    <div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    <div className="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
 ) : (
         <div className="contenedor">
             <ItemList products={products}/>

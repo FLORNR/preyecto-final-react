@@ -1,43 +1,81 @@
 import { useState, useEffect } from "react";
-import {productos} from "../productos";
 import ItemDetail from "./ItemDetail"
 import {useParams} from "react-router-dom";
 import {Link} from "react-router-dom"
 import "../css/item.css"
 import "../css/Loading.css"
+import { collection, getDocs } from 'firebase/firestore';
+import { getData } from '../firebase';
 
 function ItemDetailConteiner() {
   const [producto, setProducto ] = useState([]);
   const [loading, setLoading] = useState(false);
 
     const {id} = useParams();
-   
+
     useEffect(() => {
-      new Promise((resolve, reject) => {
         setLoading(true);
-        setTimeout(() => resolve(productos.filter((item)=>item.id === id)), 1000);
-    })
-      .then((datosProducto) => {
-        setProducto(datosProducto[0]);
+        // función que busca todos los productos
+        const getProduct = async () => {
+        const prodCollection = collection(getData(), 'productos');
+        const prodSnapshot = await getDocs(prodCollection);
+        const prodList = prodSnapshot.docs.map(doc => ({
+            id: doc.id, ...doc.data()
+        }));
+        // filtro el listado y busco el que quiero mostrar
+        const thisProd = prodList.filter((item)=>item.id === id)
         setLoading(false);
-      })
+        setProducto(thisProd);
+        };
+        getProduct();
+    }, [id]);
 
-      .catch((error) => {
-        console.log("err", error);
-      });
-  }, []);
+   
+//     useEffect(() => {
+//       new Promise((resolve, reject) => {
+//         setLoading(true);
+//         setTimeout(() => resolve(productos.filter((item)=>item.id === id)), 1000);
+//     })
+//       .then((datosProducto) => {
+//         setProducto(datosProducto[0]);
+//         setLoading(false);
+//       })
 
-  return loading ? (
+//       .catch((error) => {
+//         console.log("err", error);
+//       });
+//   }, []);
 
-    <div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
-) : (
+
+if (loading) {
+    return <div className="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+}
+
+return (
     <div className="gral">
-        <ItemDetail {...producto}/> 
+    { producto.map((item) => {
+        return(
+            <>
+            <ItemDetail id={item.id} name={item.name} img={item.img} price={item.price} description={item.description} stock={item.stock} initial={item.initial} key={item.id}/>
+            <Link className="botonVolver" to= "/"> VOLVER A PRODUCTOS </Link>
+            </>
+        )
+        })
+    }
+    </div>
+)}
+
+//   return loading ? (
+
+//     <div className="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+// // ) : { producto.map((item) => {(
+//     <div className="gral">
+//         <ItemDetail {...producto}/> 
     
-        <Link className="botonVolver" to= "/"> VOLVER A PRODUCTOS </Link>
-    </div>  
-  )
-};
+//         <Link className="botonVolver" to= "/"> VOLVER A PRODUCTOS </Link>
+//     </div>  
+//   )
+// };
 
 
 export default ItemDetailConteiner

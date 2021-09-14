@@ -8,9 +8,7 @@ import ItemDetailConteiner from "./components/ItemDetailConteiner.js";
 import { CartProvider} from "./context/cartContext";
 import  Cart from "./components/Cart";
 
-
 function App() {
-
 
   return (
     <div className="general">

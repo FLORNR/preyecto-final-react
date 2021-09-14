@@ -8,8 +8,8 @@ function Item(props) {
     return (
        
         <div className="card card2"style={{width: "15rem", heigth: "50rem"}}>
-            <img src={props.pictureUrl} className="card-img-top" alt=""/>
-            <h4 className="card-title">{props.title}</h4>
+            <img src={props.img} className="card-img-top" alt=""/>
+            <h4 className="card-title">{props.name}</h4>
             <Link className="boton" to= {`/item/${props.id}`}>VER MÁS</Link>
         </div>                                                                                                                    
 );

@@ -18,7 +18,7 @@ export const CartProvider = ( {children} ) => {
 
         const sumPrice = {...item}.price * cantidad;
 
-        let newItem = { id: item.id, name: item.title, img: item.pictureUrl, price: sumPrice, quantity: cantidad }
+        let newItem = { id: item.id, name: item.name, img: item.img, price: sumPrice, quantity: cantidad }
 
         if (isInCart({...item}.id)){
             // si el Producto está en el carrito primero anoto en qué posición está

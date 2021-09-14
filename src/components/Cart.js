@@ -17,7 +17,7 @@ function Cart () {
            <div>
                 <h2 className= "formato">Tu carrito esta vacío... 
 
- ¡Comenza a disfrutar de la moda a tu manera, clickea aquí abajo!<i class="far fa-smile-beam"></i></h2>
+ ¡Comenza a disfrutar de la moda a tu manera, clickea aquí abajo!<i className="far fa-smile-beam"></i></h2>
                 
                     <Link to="/">
                         <button className="boton" style={{marginTop:"4rem", fontSize:"1.5rem", backgroundColor:"#c5a2b3"}}>¡Empezá a comprar!</button>
@@ -44,7 +44,7 @@ function Cart () {
                         <div className= "row estiloTituloDos" key={item.id}>
                             <div className= "col-md-2 estiloItemsDos"><img style= {{ maxWidth: "100%", maxHeight: "50px"}} src={item.img} alt={item.name}/></div>
                             <div className= "col-md-4 estiloItemsDos">{item.name}</div>
-                            <div className= "col-md-2 estiloItemsDos">{item.quantity}</div>
+                            <div className= "col-md-2 estiloItemsDos">{item.quantity}</div>     
                             <div className= "col-md-2 estiloItemsDos">$ {item.price}</div>
                             <div className= "col-md-1 estiloItemsDos">
                                 <Link to={`/item/${ item.id }`}><button className="iconos"><i style={{color: "rgb(14 197 37)"}} className="fas fa-pencil"></i></button></Link>
