@@ -1,5 +1,6 @@
 import { createContext, useState, useEffect } from "react";
-
+import { collection, doc, setDoc, Timestamp } from "firebase/firestore";
+import { getData } from "../firebase";
 
 // creo el contexto y lo exporto, lo inicio como array vacio xq no hay nada en el carrito.
 export const CartContext = createContext([]);
@@ -11,6 +12,39 @@ export const CartProvider = ( {children} ) => {
     const [ cart, setCart] = useState([]);
     const [cartLength, setCartLength] = useState(0);
     const [totalPrice, setTotalPrice] = useState(0);
+
+    const [user, setUser] = useState({
+        name: "",
+        email: "",
+        phone: "",
+    }); 
+
+    const tomarDatos = (e) => {
+        setUser({
+            ...user,
+            [e.target.name]: e.target.value
+        })
+    };
+
+    const submitBotton = (e) => {
+        e.preventDefault();
+    }
+
+
+    const finalizarCompra = async () => {
+        console.log("Fin de compra");
+        const orderCollection = doc(collection(getData(), 'orders'));
+        const order = {
+            buyer: user,
+            items: cart,
+            date: Timestamp.fromDate(new Date()),
+            total: totalPrice
+        };
+        
+        
+        await setDoc(orderCollection, order)
+        
+    }
 
     //función para adherir un item al carrito
     const addItem = (item, cantidad) => {
@@ -77,7 +111,7 @@ export const CartProvider = ( {children} ) => {
 
 
     return (
-        <CartContext.Provider value={{cart, setCart, addItem, removeItem, vaciarCarrito, totalPrice, setTotalPrice, cartLength, setCartLength}}>
+        <CartContext.Provider value={{cart, setCart, addItem, removeItem, vaciarCarrito, totalPrice, setTotalPrice, cartLength, setCartLength, finalizarCompra, tomarDatos, submitBotton}}>
             { children }
         </CartContext.Provider>
     )

@@ -7,6 +7,7 @@ import ItemListConteiner from "./components/ItemListConteiner.js";
 import ItemDetailConteiner from "./components/ItemDetailConteiner.js";
 import { CartProvider} from "./context/cartContext";
 import  Cart from "./components/Cart";
+import CartForm from "./components/CartForm.js";
 
 function App() {
 
@@ -29,6 +30,11 @@ function App() {
                 <Route exact path="/cart">
                     <section>
                         <Cart />
+                    </section>
+                </Route>
+                <Route exact path="/cartForm">
+                    <section>
+                        <CartForm/>
                     </section>
                 </Route>
             </Switch>
