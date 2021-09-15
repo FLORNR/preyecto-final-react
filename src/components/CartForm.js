@@ -32,7 +32,7 @@ function CartForm() {
             
             <div className="acomodarBoton">   
         
-                <button className="iconos" onClick={finalizarCompra()} style= {{color:"white", width:"10rem", fontSize:"1.2rem", textAlign:"center"}} type="submit" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Confirmar compra <i style={{color: "rgb(14, 197, 37)", padding:"5px"}} className="fas fa-check-square"></i></button>
+                <button className="iconos" onClick={()=>finalizarCompra()} style= {{color:"white", width:"10rem", fontSize:"1.2rem", textAlign:"center"}} type="submit" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Confirmar compra <i style={{color: "rgb(14, 197, 37)", padding:"5px"}} className="fas fa-check-square"></i></button>
                 <div className="modal fade fuente" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                     <div className="modal-dialog">
                         <div className="modal-content">
