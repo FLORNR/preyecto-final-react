@@ -93,7 +93,7 @@ export const CartProvider = ( {children} ) => {
 
     useEffect (() => {
         let inCart = 0
-        console.log(cart)
+        
         for (let i of cart) {
             inCart += i.quantity 
         } 

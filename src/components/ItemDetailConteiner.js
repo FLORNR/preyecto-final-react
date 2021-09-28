@@ -22,29 +22,13 @@ function ItemDetailConteiner() {
         const prodList = prodSnapshot.docs.map(doc => ({
             id: doc.id, ...doc.data()
         }));
-        // filtro el listado y busco el que quiero mostrar
+        // filtro el listado y busco el producto que quiero mostrar
         const thisProd = prodList.filter((item)=>item.id === id)
         setLoading(false);
         setProducto(thisProd);
         };
         getProduct();
     }, [id]);
-
-   
-//     useEffect(() => {
-//       new Promise((resolve, reject) => {
-//         setLoading(true);
-//         setTimeout(() => resolve(productos.filter((item)=>item.id === id)), 1000);
-//     })
-//       .then((datosProducto) => {
-//         setProducto(datosProducto[0]);
-//         setLoading(false);
-//       })
-
-//       .catch((error) => {
-//         console.log("err", error);
-//       });
-//   }, []);
 
 
 if (loading) {
@@ -64,18 +48,6 @@ return (
     }
     </div>
 )}
-
-//   return loading ? (
-
-//     <div className="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
-// // ) : { producto.map((item) => {(
-//     <div className="gral">
-//         <ItemDetail {...producto}/> 
-    
-//         <Link className="botonVolver" to= "/"> VOLVER A PRODUCTOS </Link>
-//     </div>  
-//   )
-// };
 
 
 export default ItemDetailConteiner

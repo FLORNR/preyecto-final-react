@@ -18,7 +18,7 @@ import { CartContext } from "../context/cartContext"
         if (checkCart >= 0) {
             const actualInitial = cart[checkCart].quantity
             setNewInitial(actualInitial);
-            console.log(`Cart al cargar con initial: ${actualInitial} es`, cart);
+            
         }
     }, [cart, props.id, props.initial, props.stock]);
 
@@ -28,7 +28,6 @@ import { CartContext } from "../context/cartContext"
         addItem (props, cantProducto)
     }
     
-    console.log(cart)
     return(
         <div>
             <div className="card cardRender"style={{width: "18rem"}}>

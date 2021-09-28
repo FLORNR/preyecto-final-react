@@ -1,14 +1,11 @@
 
 .general {
     background-image: url(../img/fondo.jpg);
-    min-height: auto;
     
 }
 
 main {
     padding: 20px;
-    min-height: 650px;
-   max-height: 1000px;
 }
 
 header {

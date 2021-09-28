@@ -8,7 +8,6 @@ import "../css/item.css"
 function Cart () {
     const { cart, removeItem, cartLength, vaciarCarrito, totalPrice } = useContext(CartContext);
 
-    console.log(cart)
     return (
         cartLength <= 0 ? 
         (<div>
@@ -20,7 +19,7 @@ function Cart () {
  ¡Comenza a disfrutar de la moda a tu manera, clickea aquí abajo!<i className="far fa-smile-beam"></i></h2>
                 
                     <Link to="/">
-                        <button className="boton" style={{marginTop:"4rem", fontSize:"1.5rem", backgroundColor:"#c5a2b3"}}>¡Empezá a comprar!</button>
+                        <button className="boton empezaComprar" >¡Empezá a comprar!</button>
                     </Link>
             </div>
         </div>
@@ -47,8 +46,8 @@ function Cart () {
                             <div className= "col-md-2 estiloItemsDos">{item.quantity}</div>     
                             <div className= "col-md-2 estiloItemsDos">$ {item.price}</div>
                             <div className= "col-md-1 estiloItemsDos">
-                                <Link to={`/item/${ item.id }`}><button className="iconos"><i style={{color: "rgb(14 197 37)"}} className="fas fa-pencil"></i></button></Link>
-                                <button className="iconos" onClick={()=>removeItem(item.id)}><i style={{color: "rgb(224, 24, 24, 1)"}} className="fas fa-trash"></i></button>
+                                <Link to={`/item/${ item.id }`}><button className="iconos2"><i className="fas fa-pencil editar"></i></button></Link>
+                                <button className="iconos2" onClick={()=>removeItem(item.id)}><i className="fas fa-trash eliminar"></i></button>
                             </div>
                         </div>
                     </div>
@@ -56,11 +55,11 @@ function Cart () {
                 })
             }
             <div>
-                <h3 style={{backgroundColor: "#ffffff8f", textAlign:"center", fontSize:"2rem", fontWeight:"700"}}>Total de su compra: ${totalPrice}</h3>
+                <h3 className="tituloCompra">Total de su compra: ${totalPrice}</h3>
                 <div className="acomodarBoton">
-                    <button onClick={ ()=> vaciarCarrito() } className="emptyButton iconos" style= {{color:"white", width:"10rem", fontSize:"1.2rem", textAlign:"center"}}>Vaciar  <i style={{color: "rgb(224, 24, 24, 1)", padding:"5px"}} className="fas fa-trash"> </i></button>
-                    <Link to="/" ><button  className="emptyButton iconos" style= {{color:"white", width:"10rem", fontSize:"1.2rem", textAlign:"center"}}>Seguir Comprando  <i style={{color: "rgb(34, 41, 253, 1)", padding:"5px"}} className="fas fa-hand-point-left"> </i></button></Link>
-                    <Link to= "/cartForm"><button className="emptyButton iconos" style= {{color:"white", width:"10rem", fontSize:"1.2rem", textAlign:"center"}}>Finalizar Compra  <i style={{color: "rgb(14, 197, 37)", padding:"5px"}} className="fas fa-check-square"></i></button></Link>
+                    <button onClick={ ()=> vaciarCarrito() } className="emptyButton iconos">Vaciar  <i className="fas fa-trash eliminar"> </i></button>
+                    <Link to="/" ><button  className="emptyButton iconos" >Seguir Comprando  <i className="fas fa-hand-point-left continuar"> </i></button></Link>
+                    <Link to= "/cartForm"><button className="emptyButton iconos">Finalizar Compra  <i className="fas fa-check-square finalizar"></i></button></Link>
                 </div>
             </div>
         </div>

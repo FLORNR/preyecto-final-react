@@ -7,9 +7,7 @@ import { CartContext } from "../context/cartContext"
 function CartIco () {
 
     const { cartLength } = useContext(CartContext); 
-
-    console.log(cartLength)
-
+    
     return (
     <Link to="/cart" className="cartIco" >
         <i style={{color:"rgb(241, 173, 173)"}} className="fas fa-shopping-cart"></i>

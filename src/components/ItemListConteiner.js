@@ -56,27 +56,6 @@ import { getData } from '../firebase';
   }, [category]);
 
 
-//   useEffect(() => {
-//     new Promise((resolve, reject) => {
-    
-//         setLoading(true); 
-
-//     if (category !== undefined){
-//         setTimeout(() => resolve(productos.filter((item)=>item.category === category)), 2000);
-//     }else{
-//       setTimeout(() => resolve(productos), 2000);
-//     }
-//     })
-//       .then((datosProductos) => {
-//         console.log("datos productos", products)
-//         setProducts(datosProductos);
-//         setLoading(false);
-//       })
-//       .catch((error) => {
-//         console.log("err", error);
-//       });
-//   }, [category]);
-
   return loading ? (
 
     <div className="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
